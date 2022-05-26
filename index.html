@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="./style.css" />
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script> 
+	<script src="https://kit.fontawesome.com/81c2c05f29.js" crossorigin="anonymous"></script>
+<style>
+/* Gernal settings and font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+* {
+ 	margin: 0;
+     padding: 0;
+}
+/* Dark mode settings */
+:root {
+	--bg: #ffffff;
+	--font: #000000;
+	--header: #ffffff;
+	--swd: 3px 3px 5px #d9d9d9, -3px -3px 5px #ffffff;
+	--gost: none;
+	--prime: #000000;
+	--blue: #426cea;
+	--black2: #000000;
+}
+.dark-mode {
+	--bg: #131313;
+	--font: #ffffff;
+	--header: #000009;
+	--swd: none;
+	--gost: #426cea;
+	--prime: #426cea;
+	--blue: #ffffff;
+	--black2: #426cea;
+}
+body {
+	background: var(--bg);
+	color: var(--font);
+	font-family: 'Poppins', sans-serif;
+	height: 100%;
+	width: 100%;
+	transition: 0.3s linear;
+}
+/* Header style */
+.header {
+	transition: 0.3s linear;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.8em 1em;
+	background: var(--header);
+    -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+   -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+}
+/* Logo */
+.logo img {
+	width: 3rem;
+}
+/* Dark mode button */
+.darkBtn {
+	height: 2em;
+	width: 2em;
+	background: var(--bg);
+	color: var(--prime);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 45% 55% 39% 61% / 61% 38% 62% 39% ;
+	box-shadow: var(--swd);
+	border: 1px solid var(--gost);
+	transition: 0.3s linear;
+}
+/* Main section style */
+.main {
+	height: 90vh;
+	max-width: 100%;
+	background: var(--bg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s linear;
+}
+/* Main typewriter style */
+.main h3 {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 900;
+	text-align: center;
+	font-size: 1.8em;
+}
+.main h3 span {
+	color: var(--font);
+	text-shadow: -2px 2px 0px #426CEA;
+}
+
+/* Select all */
+.about , .skill , .main , .wrapper , .contact {
+	padding: 0.5em 0.5em;
+	transition: 0.3s linear;
+}
+/* resume button style */
+.download {
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 28px 4px;
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  color: var(--header);
+  background: var(--prime);
+}
+
+/* Other style */
+.title { color: var(--prime);}
+.form > .submit {
+	background: var(--prime);
+	color: var(--header);
+	font-weight: 600;
+	font-size: 1em;
+	box-shadow: none!important;
+}
+.form > .submit:hover {color: white;}
+/* Skill style */
+.skill-container {
+	display: flex;
+	flex-direction: row;
+	gap: 0.3em;
+}
+.container-child {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+.container-child > div {
+	outline: none;
+	border-radius: 0.2rem;
+	border: 1px solid var(--gost);
+	padding: 0.3em 0.3em;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.8em;
+	font-weight: 600;
+	box-shadow: var(--swd);
+}
+.container-child > div img {
+	width: 10%;
+}
+/* Media queries */
+@media only screen and (max-width: 600px) {
+	.skill-container {
+		flex-direction: column;
+    }
+    .container-child {
+    	width: 100%;
+    }
+}
+/* Language & hobbies */
+.wrapper {
+	display: flex;
+	/*align-items: center;*/
+}
+.wrapper > div {
+	width: 50%;
+}
+.lang { height: 10vh;}
+/* Media queries [Language and hobbies] */
+@media only screen and (max-width: 600px) {
+	.wrapper {
+		flex-direction: column;
+    }
+    .wrapper > div {
+    	width: 100%;
+    }
+}
+.lang {height: 13vh;}
+.hobbies-child {
+	display: flex;
+	gap: 0.3em;
+}
+.hobbies-child > div {
+	width: 25%;
+	height: 4.5rem;
+	background: var(--header);
+	border: 1px solid var(--gost);
+	border-radius: 3px;
+	font-size: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.2em;
+	text-align: center;
+	padding: 0.1em 0.1em;
+	box-shadow: var(--swd);
+}
+.hobbies-child > div i {
+	font-size: 1.5em;
+}
+/* Contact form */
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	width: 45%;
+}
+.form input, textarea {
+	padding: 0.8em 0.45em;
+	border: 0px;
+	background: var(--header);
+	color: #;
+	font-family: 'Poppins', sans-serif;
+	box-shadow: var(--swd);
+	color: var(--font);
+}
+.form input:focus , textarea:focus {
+	outline: none;
+	border-bottom: 2px solid var(--prime);
+	color: var(--font);
+}
+.form span {
+	font-size: 0.5em;
+	font-style: italic;
+}
+.form textarea {height: 6em;}
+::placeholder {
+	font-family: 'Poppins', sans-serif;
+}
+@media only screen and (max-width: 600px) {
+	.form {
+		width: 100%;
+     }
+}
+.footer {
+	background: #000000;
+	padding: 1em 0.8em;
+	text-transform: uppercase;
+	color: #ffffff;
+	text-align: center;
+	font-size: 0.5rem;
+}
+</style>
+</head>
+<body>
+<!--header section-->
+<div class="header">
+	<div class="logo">
+      <img src="logo-gray.png" onclick="this.src='logo.png' ">
+    </div>
+	<div class="darkBtn">
+		<i class='toggler far fa-moon' id='dark-mode-btn'></i>
+    </div>
+</div>
+<!--Main section-->
+<div class="main">
+	<h3 id="typed2"></h3>
+</div>
+<!--About section-->
+<div class="about">
+	<h2 class="title">Me, I myself</h2>
+	<p>
+		I'm Abhay Pandey, and I am a law student who is also a geek at heart. I have been working in the field of web development for the past three years. My journey's tale is really intriguing; I live in a rural location, and in 2011 I googled the name of my village and found nothing; then I decided that one day I would construct a website for my village, which is why I learnt HTML, CSS, and JavaScript.
+	</p><br>
+	<a href="abhay.pdf" class="download">RESUME</a>
+</div>
+<!--Skill section-->
+<div class="skill">
+ <h2 class="title">My Skills</h2>
+ <div class="skill-container">
+    <div class="container-child">
+	  <div><img src="html.png" alt="html"> HTML</div>
+	  <div><img src="css.png" alt="css">CSS</div>
+	  <div><img src="js.png" alt="javascript">JavaScript</div>
+	</div>
+	
+	<div class="container-child">
+	  <div><img src="sql.png" alt="MySQL">MySQL</div>
+	  <div><img src="git.png" alt="Git">Git</div>
+	  <div><img src="wp.png" alt="wordpress">WordPress</div>
+	</div>
+ </div>
+</div>
+<!--Language & hobbies section-->
+<div class="wrapper">
+	
+	<div class="lang">
+		<h2 class="title">I speak</h2>
+		   <h3 id="lang2"></h3>
+    </div>
+    <div class="hobbies">
+     <h2 class="title">Love to do</h2> 
+        <div class="hobbies-child">
+        	<div><i class="fas fa-guitar"></i> Playing Guitar</div>
+            <div><i class="fas fa-book"></i> Reading Book</div>
+            <div><i class="fas fa-camera"> </i>Picture Making</div>
+            <div><i class="fas fa-code"></i> Writing Code</div>
+        </div>
+    </div>
+    
+</div>
+<!-- contact -->
+<div class="contact">
+	<h2 class="title">Contact me</h2>
+	<form action="https://formspree.io/f/xeqnnazk" method="POST" class="form">
+		<input type="text" name="name" placeholder="Full Name" required>
+		<span>What's your good name?</span>
+		<input type="text" name="subject" placeholder="Subject" required>
+		<span>What's your need?</span>
+		<input type="email" name="email" placeholder="email@dimain.in" required>
+		<span>How do i get back in touch with you?</span>
+		<textarea name="message" placeholder="Write your message..." required></textarea>
+		<input type="submit" class="submit" name="submit" value="SEND">
+	</form>
+</div>
+<div class="footer">
+	made with &hearts; by <b>abhay</b>
+</div>
+<!--===================================-->
+<!--                     JavaScript Plugins                       -->
+<!--===================================-->
+<!-- Typewriter script -->
+<script>
+var typed2 = new Typed('#typed2', {
+    strings: ['This is <span>Abhay</span><br>Front-end,WordPress developer.'],
+    typeSpeed: 100,
+    showCursor: false,
+    backSpeed: 0,
+    fadeOut: true,
+    loop: false
+  });
+</script>
+<script>
+var typed2 = new Typed('#lang2', {
+    strings: ['हिंदी मेरी मातृभाषा है ।' , 'I am fluent in English.'],
+    typeSpeed: 90,
+    showCursor: false,
+    backSpeed: 0,
+    fadeOut: true,
+    loop: true
+  });
+</script>
+<!-- Darkmode script --> 
+<script  src="https://black1o.github.io/blogger/darkMode.js"></script>
+</body>
+</html>
